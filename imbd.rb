@@ -11,11 +11,24 @@ class Legend
 end
 
 class Movie
-	movies = IO.readlines("movies.txt")
+	def get_movies
+		IO.readlines("movies.txt")
+	end
 end
 
 class ImbdSearch
-	movies.each do |title|
-		
+
+	def movie_search(query)
+		i = Array.new
+		query.each_with_index do |name,index|
+			i << Imdb::Search.new(name)
+		end
+		binding.pry
 	end
+
+
+end
+
+class Orchestra
+
 end
